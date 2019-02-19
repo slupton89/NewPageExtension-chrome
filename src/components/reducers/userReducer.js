@@ -1,7 +1,6 @@
 import {
-  FETCH_USER_REQUEST,
-  FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE,
+  GET_USER_NAME,
+  SET_USER_NAME
 } from '../actions/userActions.js'
 
 const initialState = {
@@ -11,18 +10,16 @@ const initialState = {
 }
 
 export const userReducer = (state = initialState, action) => {
-  if(action.type === FETCH_USER_REQUEST) {
+  if(action.type === GET_USER_NAME) {
     return Object.assign({}, state, {
       loading: true
     })
-  } else if(action.type === FETCH_USER_SUCCESS) {
+  } else if(action.type === SET_USER_NAME) {
     return Object.assign({}, state, {
       loading: false,
       error: null,
     })
-  } else if(action.type === FETCH_USER_FAILURE) {
-    return Object.assign({}, state, {
-      loading: true
-    })
+  } else {
+    return initialState
   }
 }
