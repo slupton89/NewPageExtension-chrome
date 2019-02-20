@@ -1,7 +1,7 @@
 .App {
   margin: 0;
   font-family: sans-serif;
-
+  box-sizing: border-box;
   background-color: black;
 }
 
@@ -33,12 +33,14 @@
 }
 
 .hero h1 {
+  display: inline;
+  margin: .05em;
   /* Text styles */
-  font-size: 5em;
-
+  font-size: 3.5em;
+  color: rgba(255, 255, 255, 1);
   /* Margins */
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  /* margin-top: 0;
+  margin-bottom: 0.5em; */
 }
 
 .hero .btn {
@@ -62,5 +64,36 @@
   border-radius: 20px;
 
   /* Background styles */
-  background-color: rgba(147, 112, 219, 0.8);
+  background-color: rgba(147, 112, 219, 0.7);
+}
+
+.greetingSection {
+
+  /* Positioning and sizing */
+  position: absolute;
+  width: 200px;
+  left: 100px;
+  top: 150px;
+
+  /* Text styles */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+
+  /* Margins */
+  padding: 1em;
+  margin: 0;
+}
+
+.weatherSection {
+    /* Positioning and sizing */
+    position: absolute;
+    width: 200px;
+    left: 275px;
+    top: 250px;
+
+    /* Text styles */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+
+    /* Margins */
+    padding: 1em;
+    margin: 0;
 }

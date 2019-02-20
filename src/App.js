@@ -7,9 +7,19 @@ class App extends Component {
       <div className="App">
         <section class="hero">
           <div class="hero-inner">
-            <h1>My Awesome Website</h1>
+            <div className="greetingSection">
+              <h1>Good</h1>
+              {/* TODO replace */}
+              <h1 className="greetingTime">Evening</h1>
+              {/* TODO replace */}
+              <h1 className="greetingName">Shane</h1>
+            </div>
+
+            {/* TODO show weather if location allowed */}
+            <div className="weatherSection">
+              <h2>Weather info</h2>
+            </div>
             <h2>Look at this Website and bask in its amazing glory!</h2>
-            <a href="https://google.com" class="btn">Go ahead...</a>
           </div>
         </section>
       </div>
