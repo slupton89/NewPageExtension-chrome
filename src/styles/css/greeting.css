@@ -1,0 +1,20 @@
+.greetingWidget {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  font-family: "Midiet_Serif_Light";
+  src: url("../Midiet_Serif_Light.otf");
+  color: white;
+}
+.greetingWidget h1 {
+  font-size: 48px;
+  height: 42px;
+  margin: 5px;
+}
+.greetingWidget .greetingName {
+  color: red;
+  font-size: 48px;
+}
+
+/*# sourceMappingURL=greeting.css.map */

@@ -1,0 +1,85 @@
+.App {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.footer {
+  width: 100vw;
+  height: 5vh;
+}
+.footer img {
+  width: 200px;
+  height: 50px;
+}
+
+.hero {
+  /* Sizing */
+  width: 100vw;
+  height: 100vh;
+  /* Flexbox stuff */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* Text styles */
+  text-align: center;
+  color: white;
+  /* Background styles */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://picsum.photos/1920/1080/?random);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.heroInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vw;
+}
+
+.todaySection {
+  /* Positioning and sizing */
+}
+
+.weatherSection {
+  /* Positioning and sizing */
+  /* Text styles */
+}
+
+.widgetSection {
+  top: 10vh;
+  position: relative;
+  width: 95vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow: scroll;
+  border: 2px solid white;
+  margin: 0;
+}
+
+.widget {
+  /* Positioning and sizing */
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  /* border: 2px solid black; */
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+.icon {
+  /* Text styles */
+  font-size: 48px;
+}
+
+/*# sourceMappingURL=app.css.map */
