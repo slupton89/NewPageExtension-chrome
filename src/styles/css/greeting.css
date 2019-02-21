@@ -3,6 +3,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 90vw;
+  font-family: "Midiet_Serif_Light";
+  src: url("../Midiet_Serif_Light.otf");
   color: white;
 }
 .greetingWidget h1 {
@@ -13,9 +15,6 @@
 .greetingWidget .greetingName {
   color: red;
   font-size: 48px;
-}
-.greetingWidget .greetingTime {
-  color: grey;
 }
 
 /*# sourceMappingURL=greeting.css.map */

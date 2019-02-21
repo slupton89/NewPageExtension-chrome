@@ -13,10 +13,7 @@ class App extends Component {
       <div className="App">
         <section className="hero">
           <div className="hero-inner">
-            {/* TODO replace with components */}
-            <div className="greetingSection">
-              <Greeting />
-            </div>
+            <Greeting />
             <div className="widgetSection">
               {/* TODO replace with components */}
               {/* TODO show weather if location allowed */}
@@ -42,6 +39,9 @@ class App extends Component {
               <div className="widget"></div>
             </div>
           </div>
+          <footer className="footer">
+            <img src={require('./images/zentab-logo.png')} alt="zentab logo"></img>
+          </footer>
         </section>
       </div>
     );
