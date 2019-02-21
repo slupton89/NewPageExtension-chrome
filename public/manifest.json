@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "FreshStart",
+  "short_name": "ZenTab",
+  "name": "ZenTab",
+  "description": "A fresh new take on new tabs",
   "version": "0",
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='",
