@@ -12,35 +12,33 @@ class App extends Component {
     return (
       <div className="App">
         <section className="hero">
-          <div className="hero-inner">
-            <Greeting />
-            <div className="widgetSection">
-              {/* TODO replace with components */}
-              {/* TODO show weather if location allowed */}
-              <div className="weatherSection widget">
-                <FontAwesomeIcon icon="cloud-sun" className="icon" />
-                <h2>Weather info</h2>
-              </div>
-              {/* TODO replace with components */}
-              <div className="todaySection widget">
-                <FontAwesomeIcon icon="calendar-day" className="icon" />
-                <h2>Today</h2>
-              </div>
-              {/* TODO replace with components */}
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
+          <Greeting />
+          <div className="widgetSection">
+            {/* TODO replace with components */}
+            {/* TODO show weather if location allowed */}
+            <div className="weatherSection widget">
+              <FontAwesomeIcon icon="cloud-sun" className="icon" />
+              <h2>Weather info</h2>
             </div>
+            {/* TODO replace with components */}
+            <div className="todaySection widget">
+              <FontAwesomeIcon icon="calendar-day" className="icon" />
+              <h2>Today</h2>
+            </div>
+            {/* TODO replace with components */}
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
+            <div className="widget"></div>
           </div>
           <footer className="footer">
-            <img src={require('./images/zentab-logo.png')} alt="zentab logo"></img>
+            <img src={require('./images/zentab.png')} alt="zentab logo"></img>
           </footer>
         </section>
       </div>

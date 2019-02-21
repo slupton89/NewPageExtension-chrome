@@ -1,20 +1,26 @@
 
 .App {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Intro Thin';
+  src: url('../Intro\ Thin\ Regular.otf');
   box-sizing: border-box;
   background-color: black;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .footer {
   width: 100vw;
-  height: 5vh;
-
-
   img {
-    width: 200px;
-    height: 50px;
+    width: 150px;
   }
+}
+
+.icon {
+  /* Text styles */
+  font-size: 48px;
 }
 
 .hero {
@@ -24,9 +30,8 @@
 
   /* Flexbox stuff */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 
   /* Text styles */
@@ -39,60 +44,38 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
     ),
-    url(https://picsum.photos/1920/1080/?random);
+    url(https://picsum.photos/1920/1080/);
+    // url(https://picsum.photos/1920/1080/?random);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.heroInner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vw;
-}
-
-.todaySection {
-  /* Positioning and sizing */
-}
-
-.weatherSection {
-  /* Positioning and sizing */
-
-  /* Text styles */
-}
-
 .widgetSection {
   top: 10vh;
   position: relative;
   width: 95vw;
-  height: 80vh;
+  height: 50vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: flex-start;
 
   overflow: scroll;
-
-  border: 2px solid white;
   margin: 0;
+
+  z-index: 10;
 }
 
 .widget {
   /* Positioning and sizing */
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: 5px;
   /* border: 2px solid black; */
 
-  background-color: rgba(50, 50, 50, .5)
-}
-
-.icon {
-  /* Text styles */
-  font-size: 48px;
+  background-color: rgba(155, 155, 155, .15);
 }

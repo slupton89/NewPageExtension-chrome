@@ -5,10 +5,10 @@ class Greeting extends Component {
   getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()
-    return hour >= 21 && hour <= 5 ? 'Night'
-      : hour >= 17 && hour <= 20 ? 'Evening'
-      : hour >= 12 && hour <= 16 ? 'Afternoon'
-      : hour >= 6 && hour <= 11 ? 'Morning'
+    return hour >= 21 ? 'Night'
+      : hour >= 17 ? 'Evening'
+      : hour >= 12 ? 'Afternoon'
+      : hour >= 6 ? 'Morning'
       : 'ERROR'
   }
 
