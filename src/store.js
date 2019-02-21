@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux'
-import { userReducer } from './components/reducers/userReducer'
+import { userReducer, weatherReducer } from './components/reducers/'
 
 const store = createStore(
   combineReducers({

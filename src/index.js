@@ -6,6 +6,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store';
 
+require('dotenv').config()
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
