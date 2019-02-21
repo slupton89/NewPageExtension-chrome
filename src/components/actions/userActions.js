@@ -9,6 +9,7 @@ export const setUserName = () => ({
   type: SET_USER_NAME
 })
 
-export const getUser = () => (dispatch, getState) => {
+export const getUser = () => (dispatch) => {
+  console.log("getting user")
   dispatch(GetUserName())
 }

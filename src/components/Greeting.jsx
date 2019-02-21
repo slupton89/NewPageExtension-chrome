@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Moment from 'moment'
+import { connect } from 'react-redux'
 require('../styles/css/greeting.css')
-export default class Greeting extends Component {
-  moment = new Moment()
+class Greeting extends Component {
   getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()
@@ -12,13 +11,27 @@ export default class Greeting extends Component {
       : hour >= 6 && hour <= 11 ? 'Morning'
       : 'ERROR'
   }
+
+  getUserName = () => {
+    const name = this.props.userName
+    return name !== undefined ? name : 'No Name Entered'
+  }
   render() {
+
     return (
       <div className="greetingWidget">
         <h1>Good</h1>
         <h1 className="greetingTime">{this.getDayTime()},</h1>
-        <h1 className="greetingName">Shane</h1>
+        <h1 className="greetingName">{this.getUserName()}</h1>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    userName: state.user.userName
+  }
+}
+
+export default connect(mapStateToProps)(Greeting)

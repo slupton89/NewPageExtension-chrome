@@ -4,7 +4,7 @@ import {
 } from '../actions/userActions.js'
 
 const initialState = {
-  name: '',
+  userName: 'Bob',
   loading: false,
   error: false
 }
