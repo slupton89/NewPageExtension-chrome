@@ -16,7 +16,8 @@ export const fetchWeatherRequest = () => ({
 })
 
 export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS'
-export const fetchWeatherSuccess = () => ({
+export const fetchWeatherSuccess = (data) => ({
+  payload: data,
   type: FETCH_WEATHER_SUCCESS
 })
 

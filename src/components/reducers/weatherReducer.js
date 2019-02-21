@@ -14,14 +14,30 @@ const initialState = {
 }
 
 export const weatherReducer = (state = initialState, action) => {
-  if(action.type === GET_USER_NAME) {
+  if(action.type === GET_WEATHER_ZIP) {
     return Object.assign({}, state, {
       loading: true
     })
-  } else if(action.type === SET_USER_NAME) {
+  } else if(action.type === SET_WEATHER_ZIP) {
+    return Object.assign({}, state, {
+      zip: action.zip,
+      loading: false,
+      error: null
+    })
+  } else if(action.type === FETCH_WEATHER_REQUEST) {
+    return Object.assign({}, state, {
+      loading: true
+    })
+  } else if(action.type === FETCH_WEATHER_SUCCESS) {
+    return Object.assign({}, state, {
+      lastData: action.data,
+      loading: false,
+      error: null
+    })
+  } else if(action.type === FETCH_WEATHER_FAILURE) {
     return Object.assign({}, state, {
       loading: false,
-      error: null,
+      error: action.error
     })
   } else {
     return initialState
