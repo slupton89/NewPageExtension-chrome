@@ -27,33 +27,12 @@
   background-attachment: fixed;
 }
 
-.hero h1 {
-  display: inline;
-  margin: 0.05em;
-  /* Text styles */
-  font-size: 3.5em;
-  color: white;
-  /* Margins */
-  /* margin-top: 0;
-  margin-bottom: 0.5em; */
-}
-
 .heroInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vw;
-}
-
-.greetingSection {
-  /* Positioning and sizing */
-  position: absolute;
-  width: 200px;
-  left: 100px;
-  top: 10vh;
-  /* Text styles */
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  /* Margins */
-  padding: 1em;
-  margin: 0;
 }
 
 .todaySection {
@@ -77,7 +56,8 @@
   justify-content: flex-start;
   align-content: flex-start;
   overflow: scroll;
-  /* border: 2px solid white; */
+  border: 2px solid white;
+  margin: 0;
 }
 
 .widget {

@@ -16,11 +16,6 @@ class App extends Component {
             {/* TODO replace with components */}
             <div className="greetingSection">
               <Greeting />
-              {/* <h1>Good</h1> */}
-              {/* TODO replace */}
-              {/* <h1 className="greetingTime">Evening</h1> */}
-              {/* TODO replace */}
-              {/* <h1 className="greetingName">Shane</h1> */}
             </div>
             <div className="widgetSection">
               {/* TODO replace with components */}

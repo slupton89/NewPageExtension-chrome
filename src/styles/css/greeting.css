@@ -1,3 +1,21 @@
-
+.greetingWidget {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  color: white;
+}
+.greetingWidget h1 {
+  font-size: 48px;
+  height: 42px;
+  margin: 5px;
+}
+.greetingWidget .greetingName {
+  color: red;
+  font-size: 48px;
+}
+.greetingWidget .greetingTime {
+  color: grey;
+}
 
 /*# sourceMappingURL=greeting.css.map */
