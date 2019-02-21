@@ -4,6 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
+import Greeting from './components/Greeting'
+
 library.add(fas)
 class App extends Component {
   render() {
@@ -13,11 +15,12 @@ class App extends Component {
           <div className="hero-inner">
             {/* TODO replace with components */}
             <div className="greetingSection">
-              <h1>Good</h1>
+              <Greeting />
+              {/* <h1>Good</h1> */}
               {/* TODO replace */}
-              <h1 className="greetingTime">Evening</h1>
+              {/* <h1 className="greetingTime">Evening</h1> */}
               {/* TODO replace */}
-              <h1 className="greetingName">Shane</h1>
+              {/* <h1 className="greetingName">Shane</h1> */}
             </div>
             <div className="widgetSection">
               {/* TODO replace with components */}
