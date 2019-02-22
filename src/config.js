@@ -1,5 +1,3 @@
-require('dotenv').config()
+import { WEATHER_API_KEY } from './env.js'
 
-module.exports = {
-  WEATHER_API_KEY: '11111' || process.env.WEATHER_API_KEY
-}
+export const WEATHER_KEY = WEATHER_API_KEY || 'Missing OpenWeather API_KEY'

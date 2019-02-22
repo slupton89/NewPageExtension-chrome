@@ -1,4 +1,4 @@
-import { WEATHER_API_KEY } from '../../config.js'
+import { WEATHER_KEY } from '../../config.js'
 
 export const GET_WEATHER_ZIP = 'GET_WEATHER_ZIP'
 export const getWeatherZip = () => ({
@@ -29,9 +29,9 @@ export const fetchWeatherFailure = () => ({
 // TODO get stored zip from user
 export const fetchWeather = (zip) => (dispatch) => {
   console.log("Input Zip: ", zip)
-  console.log("APIKEY: ", WEATHER_API_KEY)
+  console.log("APIKEY: ", WEATHER_KEY)
   dispatch(fetchWeatherRequest())
-  return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${zip}&APPID={${WEATHER_API_KEY}}`, {
+  return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${zip}&APPID=${WEATHER_KEY}`, {
     method: 'GET',
   })
     .then(res => {
@@ -44,5 +44,5 @@ export const fetchWeather = (zip) => (dispatch) => {
       return res.json()
     })
     .then(res => dispatch(fetchWeatherSuccess(res)))
-    .catch(err => console.log(err.status, err.message))
+    .catch(err => console.log('Error', err.code, 'Message:', err.message))
 }

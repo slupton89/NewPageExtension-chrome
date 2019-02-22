@@ -7,7 +7,7 @@ import {
 } from '../actions/weatherActions.js'
 
 const initialState = {
-  zip: 80120,
+  zip: 5429032,
   lastData: [],
   loading: false,
   error: false
