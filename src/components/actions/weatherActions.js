@@ -29,6 +29,7 @@ export const fetchWeatherFailure = () => ({
 // TODO get stored zip from user
 export const fetchWeather = (zip) => (dispatch) => {
   console.log("Input Zip: ", zip)
+  console.log("APIKEY: ", WEATHER_API_KEY)
   dispatch(fetchWeatherRequest())
   return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${zip}&APPID={${WEATHER_API_KEY}}`, {
     method: 'GET',

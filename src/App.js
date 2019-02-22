@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons'
+
 import './styles/css/app.css';
 
 import Greeting from './components/Greeting'
+import Weather from './components/Weather'
 
-library.add(fas)
+// library.add(fas)
 class App extends Component {
   render() {
+    console.log(this.props.data)
     return (
       <div className="App">
         <section className="hero">
           <Greeting />
           <div className="widgetSection">
-            {/* TODO replace with components */}
             {/* TODO show weather if location allowed */}
-            <div className="weatherSection widget">
-              <FontAwesomeIcon icon="cloud-sun" className="icon" />
-              <h2>Weather info</h2>
-            </div>
+            <Weather />
             {/* TODO replace with components */}
             <div className="todaySection widget">
               <FontAwesomeIcon icon="calendar-day" className="icon" />
@@ -46,4 +44,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    zip: state.weather.zip,
+    data: state.weather.lastData
+  }
+}
+
+export default connect(mapStateToProps)(App);
