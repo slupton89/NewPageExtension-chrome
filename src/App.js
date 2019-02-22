@@ -10,7 +10,6 @@ import Weather from './components/Weather'
 // library.add(fas)
 class App extends Component {
   render() {
-    console.log(this.props.data)
     return (
       <div className="App">
         <section className="hero">

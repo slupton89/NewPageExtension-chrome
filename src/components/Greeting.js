@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 require('../styles/css/greeting.css')
 function Greeting(props) {
-  console.log(props)
   let getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()

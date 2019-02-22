@@ -28,9 +28,9 @@ export const fetchWeatherFailure = () => ({
 
 // TODO get stored zip from user
 export const fetchWeather = (zip) => (dispatch) => {
-  console.log("Input Zip: ", zip)
-  console.log("APIKEY: ", WEATHER_KEY)
   dispatch(fetchWeatherRequest())
+  // TODO figure out a way to search by city ID
+  // zip only works best for US.
   return fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=${WEATHER_KEY}`, {
     method: 'GET',
   })
@@ -44,8 +44,7 @@ export const fetchWeather = (zip) => (dispatch) => {
       return res.json()
     })
     .then(res => {
-      console.log('res: ', res.weather[0])
-      dispatch(fetchWeatherSuccess(res.weather[0]))
+      dispatch(fetchWeatherSuccess(res))
     })
     .catch(err => console.log('Error', err.code, 'Message:', err.message))
 }

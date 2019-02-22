@@ -8,7 +8,8 @@ import {
 
 const initialState = {
   zip: 80120,
-  data: [],
+  data: {"coord":{"lon":undefined,"lat":undefined},"weather":[{"id":undefined,"main":undefined,"description":undefined,"icon":undefined}],"base":undefined,"main":{"temp":undefined,"pressure":undefined,"humidity":undefined,"temp_min":undefined,"temp_max":undefined},"visibility":undefined,"wind":{"speed":undefined,"deg":undefined},"clouds":{"all":undefined},"dt":undefined,"name":undefined},
+  lastReq: 0,
   loading: false,
   error: false
 }
@@ -29,9 +30,10 @@ export const weatherReducer = (state = initialState, action) => {
       loading: true
     })
   } else if(action.type === FETCH_WEATHER_SUCCESS) {
-    console.log('data: ', action.data)
+    let time = new Date()
     return Object.assign({}, state, {
       data: action.data,
+      lastReq: time.getTime(),
       loading: false,
       error: null
     })
