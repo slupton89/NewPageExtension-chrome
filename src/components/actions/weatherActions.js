@@ -17,7 +17,7 @@ export const fetchWeatherRequest = () => ({
 
 export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS'
 export const fetchWeatherSuccess = (data) => ({
-  payload: data,
+  data,
   type: FETCH_WEATHER_SUCCESS
 })
 
@@ -31,7 +31,7 @@ export const fetchWeather = (zip) => (dispatch) => {
   console.log("Input Zip: ", zip)
   console.log("APIKEY: ", WEATHER_KEY)
   dispatch(fetchWeatherRequest())
-  return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${zip}&APPID=${WEATHER_KEY}`, {
+  return fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=${WEATHER_KEY}`, {
     method: 'GET',
   })
     .then(res => {
@@ -43,6 +43,9 @@ export const fetchWeather = (zip) => (dispatch) => {
       }
       return res.json()
     })
-    .then(res => dispatch(fetchWeatherSuccess(res)))
+    .then(res => {
+      console.log('res: ', res.weather[0])
+      dispatch(fetchWeatherSuccess(res.weather[0]))
+    })
     .catch(err => console.log('Error', err.code, 'Message:', err.message))
 }

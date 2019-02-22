@@ -10,7 +10,7 @@ function Weather(props) {
 
   return (
     <div className="weatherSection widget">
-      <FontAwesomeIcon onClick={getWeather()} icon="cloud-sun" className="icon" />
+      <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
       <h2>Weather info</h2>
       <h3>{props.zip}</h3>
       <h3>{props.data}</h3>

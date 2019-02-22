@@ -7,8 +7,8 @@ import {
 } from '../actions/weatherActions.js'
 
 const initialState = {
-  zip: 5429032,
-  lastData: [],
+  zip: 80120,
+  data: [],
   loading: false,
   error: false
 }
@@ -29,8 +29,9 @@ export const weatherReducer = (state = initialState, action) => {
       loading: true
     })
   } else if(action.type === FETCH_WEATHER_SUCCESS) {
+    console.log('data: ', action.data)
     return Object.assign({}, state, {
-      lastData: action.data,
+      data: action.data,
       loading: false,
       error: null
     })
