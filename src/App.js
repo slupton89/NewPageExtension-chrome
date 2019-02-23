@@ -7,6 +7,7 @@ import './styles/css/app.css';
 import Greeting from './components/Greeting'
 import Weather from './components/Weather'
 import GoogleOAuth from './components/GoogleAuth';
+import TopSites from './components/TopSites';
 
 // library.add(fas)
 class App extends Component {
@@ -19,8 +20,7 @@ class App extends Component {
             {/* TODO show weather if location allowed */}
             <Weather />
 
-            <GoogleOAuth />
-
+            <TopSites className="topSiteSection widget"/>
             {/* TODO replace with components */}
             <div className="todaySection widget">
               <FontAwesomeIcon icon="calendar-day" className="icon" />

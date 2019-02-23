@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {GoogleAPI,GoogleLogin,GoogleLogout} from 'react-google-oauth'
-import { GOOGLE_ID } from '../config'
-
-import { setToken } from './actions/authActions'
+import { getEvents } from './modules/gcal'
 
 class GoogleOAuth extends React.Component {
   constructor(props) {
@@ -14,37 +11,17 @@ class GoogleOAuth extends React.Component {
   }
 
   componentDidMount = () => {
-    this.getEvents();
+    getEvents((events) => {
+      this.setState({events})
+    })
   }
 
-  getEvents(){
-    let that = this;
-    function start() {
-      gapi.client.init({
-        'apiKey': GOOGLE_ID
-      }).then(function() {
-        return gapi.client.request({
-          'path': `https://www.googleapis.com/calendar/v3/calendars/events`,
-        })
-      }).then( (response) => {
-        let events = response.result.items
-        that.setState({
-          events
-        }, ()=>{
-          console.log(that.state.events);
-        })
-      }, function(reason) {
-        console.log(reason);
-      });
-    }
-    gapi.load('client', start)
-  }
   render(){
     return (
-      this.state.events.map(function(event){
+      this.state.events.map((event) => {
+        console.log(event)
         return(
           event.summary
-          (event.start.dateTime - event.end.dateTime)
         )
       })
     )
@@ -57,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect()(GoogleOAuth)
+export default connect(mapStateToProps)(GoogleOAuth)
