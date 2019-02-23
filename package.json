@@ -8,6 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-google-oauth": "^1.0.0",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.5",
     "redux": "^4.0.1",
@@ -27,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "superagent": "^4.1.0"
+  }
 }
