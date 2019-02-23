@@ -14,7 +14,7 @@ const initialState = {
   error: false
 }
 
-export const weatherReducer = (state = initialState, action) => {
+const weatherReducer = (state = initialState, action) => {
   if(action.type === GET_WEATHER_ZIP) {
     return Object.assign({}, state, {
       loading: true
@@ -46,3 +46,5 @@ export const weatherReducer = (state = initialState, action) => {
     return initialState
   }
 }
+
+export default weatherReducer

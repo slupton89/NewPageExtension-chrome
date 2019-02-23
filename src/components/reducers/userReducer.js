@@ -9,7 +9,7 @@ const initialState = {
   error: false
 }
 
-export const userReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   if(action.type === GET_USER_NAME) {
     return Object.assign({}, state, {
       loading: true
@@ -23,3 +23,5 @@ export const userReducer = (state = initialState, action) => {
     return initialState
   }
 }
+
+export default userReducer
