@@ -13,11 +13,7 @@ library.add(fas)
 
 ReactDOM.render(
   <Provider store={store}>
-    <GoogleAPI clientId="YOUR CLIENT ID"
-        onUpdateSigninStatus={Function}
-        onInitFailure={Function} >
     <App />
-    </GoogleAPI>
   </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
