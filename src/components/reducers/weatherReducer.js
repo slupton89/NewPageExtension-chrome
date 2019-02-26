@@ -1,5 +1,4 @@
 import {
-  GET_WEATHER_ZIP,
   SET_WEATHER_ZIP,
   FETCH_WEATHER_REQUEST,
   FETCH_WEATHER_SUCCESS,
@@ -7,21 +6,17 @@ import {
 } from '../actions/weatherActions.js'
 
 const initialState = {
-  zip: 80120,
-  data: {"coord":{"lon":undefined,"lat":undefined},"weather":[{"id":undefined,"main":undefined,"description":undefined,"icon":undefined}],"base":undefined,"main":{"temp":undefined,"pressure":undefined,"humidity":undefined,"temp_min":undefined,"temp_max":undefined},"visibility":undefined,"wind":{"speed":undefined,"deg":undefined},"clouds":{"all":undefined},"dt":undefined,"name":undefined},
+  loc: null,
+  data: null,
   lastReq: 0,
   loading: false,
   error: false
 }
 
 const weatherReducer = (state = initialState, action) => {
-  if(action.type === GET_WEATHER_ZIP) {
+  if(action.type === SET_WEATHER_ZIP) {
     return Object.assign({}, state, {
-      loading: true
-    })
-  } else if(action.type === SET_WEATHER_ZIP) {
-    return Object.assign({}, state, {
-      zip: action.zip,
+      loc: action.loc,
       loading: false,
       error: null
     })
