@@ -9,7 +9,6 @@ import Weather from './components/Weather'
 // import GoogleOAuth from './components/GoogleAuth';
 // import TopSites from './components/TopSites';
 
-// library.add(fas)
 class App extends Component {
   render() {
     return (

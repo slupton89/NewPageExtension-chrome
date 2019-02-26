@@ -5,9 +5,16 @@ import {
   FETCH_WEATHER_FAILURE
 } from '../actions/weatherActions.js'
 
+const GET_LOC = () => {
+  let location = localStorage.getItem('weather-loc')
+  if (location) {
+    return location.split(',')
+  }
+}
+
 const initialState = {
-  loc: null,
-  data: null,
+  loc: GET_LOC() || null,
+  data: localStorage.getItem('weather-data') || null,
   lastReq: 0,
   loading: false,
   error: false
