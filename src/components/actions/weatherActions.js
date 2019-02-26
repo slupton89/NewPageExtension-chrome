@@ -1,12 +1,8 @@
-import { WEATHER_KEY } from '../../config.js'
-
-export const GET_WEATHER_ZIP = 'GET_WEATHER_ZIP'
-export const getWeatherZip = () => ({
-  type: GET_WEATHER_ZIP
-})
+import { DARKSKY_KEY } from '../../config.js'
 
 export const SET_WEATHER_ZIP = 'SET_WEATHER_ZIP'
-export const setWeatherZip = () => ({
+export const setWeatherZip = (loc) => ({
+  loc,
   type: SET_WEATHER_ZIP
 })
 
@@ -26,13 +22,21 @@ export const fetchWeatherFailure = () => ({
   type: FETCH_WEATHER_FAILURE
 })
 
+export const setZip = (loc) => (dispatch) => {
+  dispatch(setWeatherZip([loc.coords.latitude, loc.coords.longitude]))
+  localStorage.setItem('weather-loc', `${loc.coords.latitude},${loc.coords.longitude}`)
+}
+
 // TODO get stored zip from user
-export const fetchWeather = (zip) => (dispatch) => {
+export const fetchWeather = (loc) => (dispatch) => {
   dispatch(fetchWeatherRequest())
   // TODO figure out a way to search by city ID
   // zip only works best for US.
-  return fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=${WEATHER_KEY}`, {
+  console.log(DARKSKY_KEY)
+  if(loc) {
+  return fetch(`https://api.darksky.net/forecast/${DARKSKY_KEY}/${loc[0]},${loc[1]}`, {
     method: 'GET',
+    mode: 'no-cors'
   })
     .then(res => {
       if(!res.ok) {
@@ -45,6 +49,8 @@ export const fetchWeather = (zip) => (dispatch) => {
     })
     .then(res => {
       dispatch(fetchWeatherSuccess(res))
+      localStorage.setItem('weather-data', JSON.stringify(res))
     })
     .catch(err => console.log('Error', err.code, 'Message:', err.message))
+  }
 }
