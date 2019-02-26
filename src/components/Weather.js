@@ -1,9 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fetchWeather } from './actions/weatherActions';
+import { fetchWeather, setZip } from './actions/weatherActions';
 
 function Weather(props) {
+  const successCallback = (loc) => {
+    props.dispatch(setZip(loc))
+  }
+
+  const errorCallback = (err) => {
+    console.error('ERROR: ', err)
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    successCallback,
+    errorCallback,
+    {maximumAge:600000}
+  );
+
   const getWeather = () => {
     props.dispatch(fetchWeather(props.zip))
   }

@@ -1,7 +1,7 @@
 /*global chrome*/
 import React from 'react'
 
-require('../styles/css/topsites.css')
+// require('../styles/css/topsites.css')
 function TopSites(props) {
 
 console.log(chrome)
