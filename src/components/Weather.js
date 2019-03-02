@@ -22,27 +22,32 @@ function Weather(props) {
 
   const getWeather = () => {
     console.log(props.loc)
-    // props.dispatch(fetchWeather(props.loc))
+    props.dispatch(fetchWeather(props.loc))
     setTimeout(() => getWeather(), 600000)
     console.log('WeatherData', weatherData)
 
   }
-  // getWeather()
 
-  if(weatherData) return (
-    <div>
-      <h2>{weatherData.currently.temperature}</h2>
-      <h3>{weatherData.currently.summary}</h3>
-      <h3>{weatherData.currently.windSpeed}mph</h3>
-      <h3>{weatherData.hourly.summary}</h3>
-    </div>
-  )
+  if(weatherData) {
+    console.log(weatherData)
+      return (
+      <div className="weatherSection widget">
+        <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
+        <h2>{weatherData.currently.temperature}°f</h2>
+        <h3>{weatherData.currently.summary}</h3>
+        <h3>{weatherData.currently.windSpeed} mph</h3>
+        <h3>{weatherData.hourly.summary}</h3>
+      </div>
+      )
+  } else {
+    console.log('fetching')
+    getWeather()
+  }
 
 
   return (
     <div className="weatherSection widget">
-      <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
-      {/* {weather} */}
+      <h1 style={{color: 'Red'}}>Weather Error</h1>
     </div>
   )
 }
