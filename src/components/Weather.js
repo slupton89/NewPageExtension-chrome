@@ -3,14 +3,37 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fetchWeather, setZip } from './actions/weatherActions';
 
-function Weather(props) {
-  let weatherData = props.data;
+class Weather extends React.Component {
+  state = {
+    weatherInformation: null,
+    city: null,
+    isRendering: false,
+    isLocationEnabled: true
+  }
 
-  const successCallback = (loc) => {
+  async componentDidMount() {
+    const permissionState = await checkLocationPermission()
+    if(permissionState === "denied") {
+      this.setState({ isLocationEnabled: false })
+      return
+    } else if (permissionState === "granted") {
+      this.setState({ isLocationEnabled: true })
+      this.getWeatherForCurrentLocation()
+      return
+    } else {
+      this.setState({ isLocationEnabled: false })
+      navigator.geolocation.getCurrentPosition(() => {
+        this.setState({ isLocationEnabled: true })
+        this.getWeatherForCurrentLocation()
+      })
+    }
+  }
+
+  successCallback = (loc) => {
     props.dispatch(setZip(loc))
   }
 
-  const errorCallback = (err) => {
+  errorCallback = (err) => {
     console.error('ERROR: ', err)
   }
 
@@ -29,7 +52,6 @@ function Weather(props) {
   }
 
   if(weatherData) {
-    console.log(weatherData)
       return (
       <div className="weatherSection widget">
         <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
