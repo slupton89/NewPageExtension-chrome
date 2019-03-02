@@ -14,7 +14,7 @@ const GET_LOC = () => {
 
 const initialState = {
   loc: GET_LOC() || null,
-  data: localStorage.getItem('weather-data') || null,
+  data: null,
   lastReq: 0,
   loading: false,
   error: false

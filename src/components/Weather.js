@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fetchWeather, setZip } from './actions/weatherActions';
 
 function Weather(props) {
+  let weatherData = props.data;
+
   const successCallback = (loc) => {
     props.dispatch(setZip(loc))
   }
@@ -21,33 +23,31 @@ function Weather(props) {
   const getWeather = () => {
     console.log(props.loc)
     props.dispatch(fetchWeather(props.loc))
-    setTimeout(() => getWeather(), 60000)
+    setTimeout(() => getWeather(), 600000)
+    console.log('WeatherData', weatherData)
+
   }
 
-  // getWeather()
+  if(weatherData) {
+    console.log(weatherData)
+      return (
+      <div className="weatherSection widget">
+        <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
+        <h2>{weatherData.currently.temperature}°f</h2>
+        <h3>{weatherData.currently.summary}</h3>
+        <h3>{weatherData.currently.windSpeed} mph</h3>
+        <h3>{weatherData.hourly.summary}</h3>
+      </div>
+      )
+  } else {
+    console.log('fetching')
+    getWeather()
+  }
 
-  // const weather = () => {
-  //   let weatherData = props.data;
-  //   console.log(weatherData)
-  //   let time = new Date()
-  //   if((time.getTime() - props.lastReq) > 60000) {
-  //     getWeather()
-  //   }
-  //   setTimeout(()=> getWeather(), 60000)
-  //   return (
-  //     <div>
-  //       <h2>{weatherData}</h2>
-  //       {/* <h3>{weatherData.main.temp}</h3>
-  //       <h3>{weatherData.wind.speed}mph</h3>
-  //       <h3>{weatherData.weather[0].description}</h3> */}
-  //     </div>
-  //   )
-  // }
 
   return (
     <div className="weatherSection widget">
-      <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
-      {/* {weather()} */}
+      <h1 style={{color: 'Red'}}>Weather Error</h1>
     </div>
   )
 }
