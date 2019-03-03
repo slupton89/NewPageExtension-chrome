@@ -1,55 +1,44 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fetchWeather, setZip } from './actions/weatherActions';
+import socketIOClient from 'socket.io-client'
+import { CircleLoader } from 'react-spinners'
 
-function Weather(props) {
-  let weatherData = props.data;
+class Weather extends React.Component {
+  constructor() {
+    super()
 
-  const successCallback = (loc) => {
-    props.dispatch(setZip(loc))
+    this.state = {
+      response: false,
+      endpoint: 'http://localhost:8080'
+    }
   }
 
-  const errorCallback = (err) => {
-    console.error('ERROR: ', err)
+  componentDidMount() {
+    const { endpoint } = this.state
+    const socket = socketIOClient(endpoint)
+    socket.on("FromAPI", data => this.setState({ response: data }))
   }
 
-  navigator.geolocation.getCurrentPosition(
-    successCallback,
-    errorCallback,
-    {maximumAge:600000}
-  );
-
-  const getWeather = () => {
-    console.log(props.loc)
-    props.dispatch(fetchWeather(props.loc))
-    setTimeout(() => getWeather(), 600000)
-    console.log('WeatherData', weatherData)
-
-  }
-
-  if(weatherData) {
-    console.log(weatherData)
-      return (
-      <div className="weatherSection widget">
-        <FontAwesomeIcon onClick={() => getWeather()} icon="cloud-sun" className="icon" />
-        <h2>{weatherData.currently.temperature}Â°f</h2>
-        <h3>{weatherData.currently.summary}</h3>
-        <h3>{weatherData.currently.windSpeed} mph</h3>
-        <h3>{weatherData.hourly.summary}</h3>
+  render() {
+    const { response } = this.state
+    return (
+      <div style={{ textAlign: "center" }}>
+        {response
+          ? <div className="widget">
+              The temperature is currently: {response} °F
+            </div>
+            : <div className="widget">
+              <CircleLoader className="loader"
+                css={{textAlign: 'center'}}
+                sizeUnit={'px'}
+                size={50}
+                color={'#FFFFFF'}
+              />
+            </div>}
       </div>
-      )
-  } else {
-    console.log('fetching')
-    getWeather()
+    )
   }
-
-
-  return (
-    <div className="weatherSection widget">
-      <h1 style={{color: 'Red'}}>Weather Error</h1>
-    </div>
-  )
 }
 
 const mapStateToProps = state => ({
