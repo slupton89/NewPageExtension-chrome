@@ -1,41 +1,46 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import socketIOClient from 'socket.io-client'
 import { CircleLoader } from 'react-spinners'
 
+import '../styles/css/weather.css'
 class Weather extends React.Component {
   constructor() {
     super()
 
     this.state = {
       response: false,
-      endpoint: 'http://localhost:8080'
+      endpoint: 'https://newpageextension-server-l5nr9mlss.now.sh'
     }
   }
 
   componentDidMount() {
     const { endpoint } = this.state
     const socket = socketIOClient(endpoint)
-    socket.on("FromAPI", data => this.setState({ response: data }))
+    navigator.geolocation.getCurrentPosition(pos => socket.send([pos.coords.latitude, pos.coords.longitude]))
+    socket.on("FromAPI", data => {
+      this.setState({ response: data })
+    })
   }
 
   render() {
     const { response } = this.state
+    console.log(this.state.response)
     return (
       <div style={{ textAlign: "center" }}>
         {response
-          ? <div className="widget">
-              The temperature is currently: {response} °F
+          ? <div className="widget weatherDesc">
+              <h1>The temperature is currently: {response.temperature} </h1>
             </div>
             : <div className="widget">
-              <CircleLoader className="loader"
-                css={{textAlign: 'center'}}
-                sizeUnit={'px'}
-                size={50}
-                color={'#FFFFFF'}
-              />
-            </div>}
+                <div className="loader">
+                  <CircleLoader
+                    sizeUnit={'px'}
+                    size={50}
+                    color={'#FFFFFF'}
+                  />
+                </div>
+              </div>}
       </div>
     )
   }
