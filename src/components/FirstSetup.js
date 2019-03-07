@@ -52,7 +52,6 @@ export default class FirstSetup extends React.Component {
         <Name className={this.state.name} style={this.state.nameStyle} setName={this.setName.bind(this)}/>
         {/* third page */}
         {/* <Backgrounds className={this.state.backgrounds} style={this.state.nameStyle} /> */}
-
         {/* forth page */}
           {/* enable location */}
 

@@ -21,12 +21,10 @@ export class Name extends React.Component {
               this.setState(Object.assign({}, this.state, {
               username: document.querySelector('input').value
               }))
-              console.log(document.querySelector('input').value)
             }} />
           <button type='submit' className='nextBtn'><FontAwesomeIcon className='nextBtn' icon='play-circle'
             onClick={(e) => {
               e.preventDefault()
-              console.log(this.state.username)
               this.props.setName(this.state.username)
             }}/>
           </button>
