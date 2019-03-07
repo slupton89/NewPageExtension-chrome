@@ -8,7 +8,11 @@ export default class FirstSetup extends React.Component {
     super()
 
     this.state = {
-      intro: 'intro'
+      intro: 'intro',
+      name: 'name',
+      backgrounds: 'backgrounds',
+      theme: 'theme',
+      location: ''
     }
   }
   render() {
@@ -27,6 +31,15 @@ export default class FirstSetup extends React.Component {
             } />
             <h2 className='intro'>Lets get started on personalizing your new tab</h2>
           </div>
+          {/* second page */}
+            {/* name */}
+
+          {/* third page */}
+            {/* dark or light theme */}
+
+          {/* forth page */}
+            {/* enable location */}
+
         </div>
       </div>
     )
