@@ -9,13 +9,15 @@
   color: white;
 }
 .greetingWidget h1 {
-  font-size: 48px;
+  font-size: 3.5em;
+  font-weight: 500;
   height: 42px;
   margin: 5px;
 }
 .greetingWidget .greetingName {
   color: red;
-  font-size: 48px;
+  font-size: 3.5em;
+  font-weight: 900;
   font-family: "Intro Light";
   src: url("../Intro Light Regular.otf");
 }

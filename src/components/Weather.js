@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import socketIOClient from 'socket.io-client'
 import { CircleLoader } from 'react-spinners'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../styles/css/weather.css'
 class Weather extends React.Component {
@@ -10,7 +11,7 @@ class Weather extends React.Component {
 
     this.state = {
       response: false,
-      endpoint: 'https://newpageextension-server-l5nr9mlss.now.sh'
+      endpoint: 'localhost:1337'
     }
   }
 
@@ -30,7 +31,9 @@ class Weather extends React.Component {
       <div style={{ textAlign: "center" }}>
         {response
           ? <div className="widget weatherDesc">
-              <h1>The temperature is currently: {response.temperature} </h1>
+              <FontAwesomeIcon icon="cloud" className="icon"/>
+              <h1 className="temp">{response.temperature}°F</h1>
+              <h2 className="summart">{response.summary}</h2>
             </div>
             : <div className="widget">
                 <div className="loader">
