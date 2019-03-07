@@ -2,6 +2,8 @@
   background-image: linear-gradient(-110deg, #eba100, #420061);
   background-color: black;
   color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 .intro .setup {
@@ -26,9 +28,10 @@
 }
 .intro .setup .startBtn {
   transition: box-shadow 0.5s ease-in-out, color 0.5s ease-in-out, font 4s ease;
-  margin-right: 15vw;
+  margin-right: 10vw;
   font-size: 8vw;
-  align-self: flex-end;
+  align-self: center;
+  margin-top: 10vh;
   border: none;
   border-radius: 50%;
 }
@@ -36,4 +39,4 @@
   color: dodgerblue;
 }
 
-/*# sourceMappingURL=FirstSetup.css.map */
+/*# sourceMappingURL=firstsetup.css.map */
