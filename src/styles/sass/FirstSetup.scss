@@ -1,0 +1,47 @@
+.firstrun {
+  background-image: linear-gradient(-110deg, rgb(235, 161, 0), rgb(66, 0, 97));
+  background-color: black;
+  color: white;
+
+
+}
+
+.intro {
+  .setup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 100vh;
+    width: 100vw;
+
+    .welcome {
+      margin-left: 10vw;
+      font-size: 3.5em;
+      font-family: 'Intro Light';
+      src: url('../Intro\ Light\ Regular.otf');
+    }
+
+    .intro {
+      margin-left: 10vw;
+      font-size: 2em;
+      font-family: 'Intro Thin';
+      src: url('../Intro\ Thin\ Regular.otf');
+    }
+
+    .startBtn {
+      transition: box-shadow 0.5s ease-in-out, color 0.5s ease-in-out, font 4s ease;
+
+      margin-right: 15vw;
+      font-size: 8vw;
+      align-self: flex-end;
+      border: none;
+      border-radius: 50%;
+
+      &:hover {
+        color: dodgerblue;
+      }
+    }
+  }
+}

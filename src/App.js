@@ -6,43 +6,48 @@ import './styles/css/app.css';
 
 import Greeting from './components/Greeting'
 import Weather from './components/Weather'
+import FirstSetup from './components/First-Setup';
 // import GoogleOAuth from './components/GoogleAuth';
 // import TopSites from './components/TopSites';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <section className="hero">
-          <Greeting />
-          <div className="widgetSection">
-            {/* TODO show weather if location allowed */}
-            <Weather />
+    if(localStorage.getItem('firstRun') !== true) {
+      return <FirstSetup />
+    } else {
+      return (
+        <div className="App">
+          <section className="hero">
+            <Greeting />
+            <div className="widgetSection">
+              {/* TODO show weather if location allowed */}
+              <Weather />
 
-            {/* <TopSites className="topSiteSection widget"/> */}
-            {/* TODO replace with components */}
-            <div className="todaySection widget">
-              <FontAwesomeIcon icon="calendar-day" className="icon" />
-              <h2>Today</h2>
+              {/* <TopSites className="topSiteSection widget"/> */}
+              {/* TODO replace with components */}
+              <div className="todaySection widget">
+                <FontAwesomeIcon icon="calendar-day" className="icon" />
+                <h2>Today</h2>
+              </div>
+              {/* TODO replace with components */}
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
+              <div className="widget"></div>
             </div>
-            {/* TODO replace with components */}
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-            <div className="widget"></div>
-          </div>
-          <footer className="footer">
-            <img src={require('./images/zentab.png')} alt="zentab logo"></img>
-          </footer>
-        </section>
-      </div>
-    );
+            <footer className="footer">
+              <img src={require('./images/zentab.png')} alt="zentab logo"></img>
+            </footer>
+          </section>
+        </div>
+      );
+    }
   }
 }
 
