@@ -13,7 +13,9 @@ export default class FirstSetup extends React.Component {
       intro: 'intro',
       introStyle: {},
       name: 'name',
+      nameStyle: {display: 'none'},
       backgrounds: 'backgrounds',
+      bgStyle: {display: 'none'},
       theme: 'theme',
       location: ''
     }
@@ -23,7 +25,9 @@ export default class FirstSetup extends React.Component {
     localStorage.setItem('username', name)
     this.setState(Object.assign({}, this.state, {
       name: 'name animated fadeOutLeft',
-      backgrounds: 'background animated fadeInRight'
+      nameStyle: {display: 'none'},
+      backgrounds: 'background animated fadeInRight',
+      bgStyle: {display: 'flex'}
     }))
   }
 
@@ -51,7 +55,7 @@ export default class FirstSetup extends React.Component {
         {/* second page */}
         <Name className={this.state.name} style={this.state.nameStyle} setName={this.setName.bind(this)}/>
         {/* third page */}
-        {/* <Backgrounds className={this.state.backgrounds} style={this.state.nameStyle} /> */}
+        <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle} />
         {/* forth page */}
           {/* enable location */}
 

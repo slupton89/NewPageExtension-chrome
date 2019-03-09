@@ -1,7 +1,58 @@
-.backgrounds {
-  display: none;
+.background {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
+  display: none;
+}
+.background .title {
+  font-size: 3.5em;
+  font-weight: 900;
+  font-family: "Intro Thin";
+  src: url("../Intro Thin Regular.otf");
+}
+.background .nameField {
+  color: white;
+  font-size: 4em;
+  font-weight: 500;
+  font-family: "Intro Thin";
+  src: url("../Intro Thin Regular.otf");
+  align-self: center;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 75vw;
+  margin-top: 5vh;
+}
+.background .nameField:focus {
+  border: none;
+  border-bottom: 3px solid white;
+  outline: none;
+}
+.background .nextBtn {
+  transition: box-shadow 0.5s ease-in-out, color 0.5s ease-in-out, font 4s ease;
+  color: white;
+  font-size: 8vw;
+  align-self: center;
+  margin-top: 10vh;
+  border: none;
+  border-radius: 50%;
+}
+.background .nextBtn:hover {
+  color: dodgerblue;
+}
+.background form {
+  display: flex;
+  flex-direction: column;
+}
+.background form button {
+  background-color: transparent;
+  border: none;
+}
+.background form button:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=backgrounds.css.map */
