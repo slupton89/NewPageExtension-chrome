@@ -1,4 +1,5 @@
 .background {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -8,33 +9,45 @@
   display: none;
 
   .title {
+    text-align: center;
+
     font-size: 3.5em;
     font-weight: 900;
     font-family: 'Intro Thin';
     src: url('../Intro\ Thin\ Regular.otf');
   }
 
-  .nameField {
-    color: white;
-    font-size: 4em;
-    font-weight: 500;
-    font-family: 'Intro Thin';
-    src: url('../Intro\ Thin\ Regular.otf');
+  .img-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
-    align-self: center;
-    text-align: center;
+    .img-group {
+      transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out, font-size 0.5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 2.5vw;
 
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid white;
+      border-radius: 50%;
+      background-color: dodgerblue;
 
-    width: 75vw;
-    margin-top: 5vh;
+      .img-title {
+        font-family: 'Intro Light';
+        font-size: 1.5em;
+      }
 
-    &:focus {
-      border: none;
-      border-bottom: 3px solid white;
-      outline: none;
+      &:hover {
+        font-size: 1.6em;
+        width: 165px;
+        height: 165px;
+        background-color: violet;
+      }
     }
   }
 
