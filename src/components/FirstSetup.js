@@ -33,7 +33,7 @@ export default class FirstSetup extends React.Component {
 
   render() {
     return (
-      <div className='firstrun'>
+      <div className='firstrun' ref='firstRun'>
         <div className={this.state.intro} style={this.state.introStyle}>
           <div className= 'setup animated fadeInRight'>
             <h1 className='welcome'>Welcome to zentab</h1>
@@ -55,7 +55,7 @@ export default class FirstSetup extends React.Component {
         {/* second page */}
         <Name className={this.state.name} style={this.state.nameStyle} setName={this.setName.bind(this)}/>
         {/* third page */}
-        <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle} />
+        <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle} firstRun={this.refs.firstRun}/>
         {/* forth page */}
           {/* enable location */}
 

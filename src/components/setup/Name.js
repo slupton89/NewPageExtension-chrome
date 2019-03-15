@@ -11,11 +11,12 @@ export class Name extends React.Component {
       username: ''
     }
   }
+
   render() {
     return (
       <div className={this.props.className} style={this.props.style}>
         <h1 className='title'>What is your name?</h1>
-        <form onSubmit={(e) => {
+        <form name='nameForm' onSubmit={(e) => {
             e.preventDefault()
             if(this.state.username) {
               this.props.setName(this.state.username)
