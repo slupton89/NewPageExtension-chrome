@@ -7,8 +7,6 @@ import './styles/css/app.css';
 import Greeting from './components/Greeting'
 import Weather from './components/Weather'
 import FirstSetup from './components/FirstSetup';
-// import GoogleOAuth from './components/GoogleAuth';
-// import TopSites from './components/TopSites';
 
 class App extends Component {
   render() {

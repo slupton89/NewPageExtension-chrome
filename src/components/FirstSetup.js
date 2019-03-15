@@ -33,7 +33,7 @@ export default class FirstSetup extends React.Component {
 
   render() {
     return (
-      <div className='firstrun'>
+      <div className='firstrun' ref='firstSetup'>
         <div className={this.state.intro} style={this.state.introStyle}>
           <div className= 'setup animated fadeInRight'>
             <h1 className='welcome'>Welcome to zentab</h1>
