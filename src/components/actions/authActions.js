@@ -10,11 +10,9 @@ export const setUserToken = (token) => ({
 })
 
 export const getUser = () => (dispatch) => {
-  console.log("getting user")
   dispatch(GetUserToken())
 }
 
 export const setToken = (token) => (dispatch) => {
-  console.log('Setting token', token)
   dispatch(setUserToken(token))
 }

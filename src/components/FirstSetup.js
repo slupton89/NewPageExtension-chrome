@@ -1,7 +1,8 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Name } from './setup/Name';
-import Backgrounds from './setup/Backgrounds';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Name } from './setup/Name'
+import Backgrounds from './setup/Backgrounds'
+import Location from './setup/Location'
 
 import('../styles/css/firstsetup.css')
 import('../styles/css/animate.css')
@@ -16,8 +17,8 @@ export default class FirstSetup extends React.Component {
       nameStyle: {display: 'none'},
       backgrounds: 'backgrounds',
       bgStyle: {display: 'none'},
-      theme: 'theme',
-      location: ''
+      location: '',
+      locStyle: {display: 'none'}
     }
   }
 
@@ -57,7 +58,7 @@ export default class FirstSetup extends React.Component {
         {/* third page */}
         <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle} firstRun={this.refs.firstRun}/>
         {/* forth page */}
-          {/* enable location */}
+        <Location className={this.state.location} style={this.state.locStyle} />
 
       </div>
     )

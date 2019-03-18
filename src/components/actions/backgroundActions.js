@@ -22,6 +22,8 @@ export const getBGs = (imgSetId) => (dispatch) => {
     return res.json()
   })
   .then((res) => {
+    // TODO add function to create an objects of img URLs
+    // and credits from res response.
     dispatch(GetBackgrounds(res))
   })
   .catch(err => {
