@@ -1,3 +1,50 @@
-
+.location {
+  transition: background-color 1.5s ease-in-out;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.location .title {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 900;
+  font-family: "Intro Thin";
+  src: url("../Intro Thin Regular.otf");
+}
+.location .desc {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 600;
+  font-family: "Intro thin";
+}
+.location .loc-btn {
+  transition: background-color 1.5s ease-in-out, color 1.5s ease-in-out, box-shadow 1.5s ease-in-out;
+  width: 20vw;
+  height: 10vh;
+  color: dodgerblue;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px dotted dodgerblue;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.85);
+  transform: skew(15deg, 0);
+}
+.location .loc-btn .btn-text {
+  font-size: 2.3vw;
+  font-weight: 500;
+  font-family: "Intro Light";
+  position: relative;
+  bottom: 5px;
+  transform: skew(-15deg, 0);
+}
+.location .loc-btn:hover {
+  color: white;
+  background-color: dodgerblue;
+  border-color: white;
+  box-shadow: 0 0 0 5px dodgerblue;
+}
 
 /*# sourceMappingURL=location.css.map */
