@@ -1,28 +1,29 @@
 import { API_URI } from '../../config'
 
 export const GET_BACKGROUNDS = 'GET_BACKGROUNDS'
-export const GetBackgrounds = (imgSet) => ({
-  imgSet,
+export const GetBackgrounds = (gallery) => ({
+  gallery,
   type: GET_BACKGROUNDS
 })
 
 
 export const getBGs = (imgSetId) => (dispatch) => {
-  return fetch(`${API_URI}/bg`, {
+  return fetch(`${API_URI}/bg/?id=${imgSetId}`, {
     method: 'GET',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
-    },
-    id: imgSetId,
+    }
   })
   .then((res) => {
     if(!res.ok) {
       throw new Error('HTTP error, status = ' + res.status)
     }
-    console.log('response: ', res)
-    return res
+    return res.json()
   })
-  .then((res) => dispatch(GetBackgrounds(res)))
+  .then((res) => {
+    dispatch(GetBackgrounds(res))
+  })
   .catch(err => {
     console.error('SERVER ERROR: ', err)
   })
