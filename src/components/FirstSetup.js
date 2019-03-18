@@ -1,7 +1,8 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Name } from './setup/Name';
-import Backgrounds from './setup/Backgrounds';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Name } from './setup/Name'
+import Backgrounds from './setup/Backgrounds'
+import Location from './setup/Location'
 
 import('../styles/css/firstsetup.css')
 import('../styles/css/animate.css')
@@ -16,8 +17,8 @@ export default class FirstSetup extends React.Component {
       nameStyle: {display: 'none'},
       backgrounds: 'backgrounds',
       bgStyle: {display: 'none'},
-      theme: 'theme',
-      location: ''
+      location: 'location',
+      locStyle: {display: 'none'}
     }
   }
 
@@ -29,6 +30,24 @@ export default class FirstSetup extends React.Component {
       backgrounds: 'background animated fadeInRight',
       bgStyle: {display: 'flex'}
     }))
+  }
+
+  setBackgrounds(bgs) {
+    localStorage.setItem('backgrounds', bgs)
+    this.setState(Object.assign({}, this.state, {
+      backgrounds: 'background animated fadeOutLeft',
+      bgStyle: {display: 'none'},
+      location: 'location animated fadeInRight',
+      locStyle: {display: 'flex'},
+    }))
+  }
+
+  finishSetup(){
+    this.setState(Object.assign({}, this.state, {
+      location: 'location animated fadeOutLeft',
+      locStyle: {display: 'none'},
+    }))
+    localStorage.setItem('firstRun', true)
   }
 
   render() {
@@ -53,12 +72,15 @@ export default class FirstSetup extends React.Component {
           </div>
         </div>
         {/* second page */}
-        <Name className={this.state.name} style={this.state.nameStyle} setName={this.setName.bind(this)}/>
+        <Name className={this.state.name} style={this.state.nameStyle}
+          setName={this.setName.bind(this)}/>
         {/* third page */}
-        <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle} firstRun={this.refs.firstRun}/>
+        <Backgrounds className={this.state.backgrounds} style={this.state.bgStyle}
+          firstRun={this.refs.firstRun}
+          setBackgrounds={this.setBackgrounds.bind(this)}/>
         {/* forth page */}
-          {/* enable location */}
-
+        <Location className={this.state.location} style={this.state.locStyle}
+          finishSetup={this.finishSetup.bind(this)}/>
       </div>
     )
   }

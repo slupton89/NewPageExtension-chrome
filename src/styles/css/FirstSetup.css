@@ -38,4 +38,17 @@
   color: dodgerblue;
 }
 
+.nextBtn {
+  transition: box-shadow 0.5s ease-in-out, color 0.5s ease-in-out, font 4s ease;
+  color: white;
+  font-size: 8vw;
+  align-self: center;
+  margin-top: 10vh;
+  border: none;
+  border-radius: 50%;
+}
+.nextBtn:hover {
+  color: dodgerblue;
+}
+
 /*# sourceMappingURL=firstsetup.css.map */

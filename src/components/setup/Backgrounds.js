@@ -63,7 +63,7 @@ class Backgrounds extends React.Component {
               <h3 className='img-title'>Abstract</h3>
             </div>
           </div>
-          <FontAwesomeIcon className='nextBtn' icon="play-circle" />
+          <FontAwesomeIcon className='nextBtn' icon="play-circle" onClick={() => this.props.setBackgrounds(this.props.gallery)} />
         </div>
       </div>
     )
