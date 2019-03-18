@@ -26,7 +26,6 @@ class Weather extends React.Component {
 
   render() {
     const { response } = this.state
-    console.log(this.state.response)
     return (
       <div style={{ textAlign: "center" }}>
         {response
