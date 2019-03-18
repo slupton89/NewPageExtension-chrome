@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Name } from './setup/Name';
-import { Backgrounds } from './setup/Backgrounds';
+import Backgrounds from './setup/Backgrounds';
 
 import('../styles/css/firstsetup.css')
 import('../styles/css/animate.css')

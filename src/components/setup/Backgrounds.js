@@ -10,7 +10,7 @@ import {
 } from '../../config'
 import('../../styles/css/backgrounds.css')
 
-export class Backgrounds extends React.Component {
+class Backgrounds extends React.Component {
   constructor(props) {
     super(props)
 
@@ -23,7 +23,6 @@ export class Backgrounds extends React.Component {
   }
 
   changeBackground = (image) => {
-    console.log(this.state.backgroundImage)
     this.setState({
       backgroundImage: image
     })
@@ -71,4 +70,8 @@ export class Backgrounds extends React.Component {
   }
 }
 
-connect()(Backgrounds)
+const mapStateToProps = state => ({
+  gallery: state.bgs.gallery
+})
+
+export default connect(mapStateToProps)(Backgrounds)
