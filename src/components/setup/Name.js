@@ -28,10 +28,7 @@ export class Name extends React.Component {
               username: document.querySelector('input').value
               }))
             }} required />
-          <button type='submit' className='nextBtn'><FontAwesomeIcon className='nextBtn' icon='play-circle'
-            onClick={(e) => {
-              console.log('clicked', e)
-            }}/>
+          <button type='submit' className='nextBtn'><FontAwesomeIcon className='nextBtn' icon='play-circle' />
           </button>
         </form>
       </div>
