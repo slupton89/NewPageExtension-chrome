@@ -1,10 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import FirstSetup from '../FirstSetup'
+import { getBGs } from '../actions/backgroundActions';
+import {
+  landscapeId,
+  spaceId,
+  citiesId,
+  abstractId
+} from '../../config'
 import('../../styles/css/backgrounds.css')
 
-
-var ReactDOM = require('react-dom')
 export class Backgrounds extends React.Component {
   constructor(props) {
     super(props)
@@ -17,12 +22,7 @@ export class Backgrounds extends React.Component {
     }
   }
 
-  landscapeGal = 72157690383405223
-  spaceGal = 72157704051272222
-  citiesGal = 72157704051615492
-  abstractGal = 72157679355152808
-
-  changeBackground = (id, image) => {
+  changeBackground = (image) => {
     console.log(this.state.backgroundImage)
     this.setState({
       backgroundImage: image
@@ -39,18 +39,28 @@ export class Backgrounds extends React.Component {
           <h1 className='title'>What backgrounds would you like to see?</h1>
           <div className='img-container'>
             <div className='img-group'
-              onMouseOver={()=> this.changeBackground(this.landscapeGal, 'https://farm3.staticflickr.com/2940/34149109766_4b7a0ef51b_b.jpg')}
+              onMouseOver={()=> this.changeBackground('https://farm3.staticflickr.com/2940/34149109766_4b7a0ef51b_b.jpg')}
+              onClick={() => this.props.dispatch(getBGs(landscapeId))}
             >
               <h3 className='img-title'>Landscapes</h3>
             </div>
-            <div className='img-group' onMouseOver={()=> this.changeBackground(this.spaceGal, 'https://farm9.staticflickr.com/8479/8187467569_6a380686d3_b.jpg')}>
+            <div className='img-group'
+              onMouseOver={()=> this.changeBackground('https://farm9.staticflickr.com/8479/8187467569_6a380686d3_b.jpg')}
+              onClick={() => this.props.dispatch(getBGs(spaceId))}
+            >
               <h3 className='img-title'>Space</h3>
             </div>
-            <div className='img-group'onMouseOver={()=> this.changeBackground(this.citiesGal, 'https://farm8.staticflickr.com/7466/16023505656_a1c130e6ac_b.jpg')}>
+            <div className='img-group'
+              onMouseOver={()=> this.changeBackground('https://farm8.staticflickr.com/7466/16023505656_a1c130e6ac_b.jpg')}
+              onClick={() => this.props.dispatch(getBGs(citiesId))}
+            >
               <h3 className='img-title'>Cities</h3>
               <img className='img' src='' alt='' />
             </div>
-            <div className='img-group' onMouseOver={()=> this.changeBackground(this.abstractGal, 'https://farm8.staticflickr.com/7043/13384323343_951f59c1e0_b.jpg')}>
+            <div className='img-group'
+              onMouseOver={()=> this.changeBackground('https://farm8.staticflickr.com/7043/13384323343_951f59c1e0_b.jpg')}
+              onClick={() => this.props.dispatch(getBGs(abstractId))}
+            >
               <h3 className='img-title'>Abstract</h3>
             </div>
           </div>
@@ -58,6 +68,7 @@ export class Backgrounds extends React.Component {
         </div>
       </div>
     )
-
   }
 }
+
+connect()(Backgrounds)
