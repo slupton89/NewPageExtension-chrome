@@ -1,0 +1,21 @@
+.datetime {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+
+  .time {
+    font-size: 2em;
+    font-weight: normal;
+    height: 42px;
+    margin-left: 5vw;
+  }
+
+  .date {
+    font-size: 2em;
+    font-weight: normal;
+  }
+}
+
+

@@ -6,6 +6,7 @@ import './styles/css/app.css';
 import Greeting from './components/Greeting'
 import Weather from './components/Weather'
 import FirstSetup from './components/FirstSetup';
+import DateTime from './components/DateTime';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class App extends Component {
             }}>
             <div className='greeting-container'>
               <Greeting />
+              <DateTime />
               <Weather />
             </div>
             <footer className="footer">
