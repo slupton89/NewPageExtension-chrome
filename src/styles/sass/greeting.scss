@@ -14,7 +14,7 @@
     height: 42px;
     margin: 5px;
 
-    text-shadow: 0 0 5px rgb(255, 255, 255),
+    text-shadow: 0.03em 0.03em black;
   }
 
   .greetingName {
@@ -23,7 +23,7 @@
     font-weight: normal;
     font-family: 'Intro Thin';
 
-    text-shadow: 0 0 5px rgb(255, 255, 255),
+    text-shadow: 0.03em 0.03em black;
   }
 
   .greetingTime {

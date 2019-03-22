@@ -29,12 +29,12 @@ class Weather extends React.Component {
     return (
       <div style={{ textAlign: "center" }}>
         {response
-          ? <div className="widget weatherDesc">
+          ? <div className="weather weatherDesc">
               <FontAwesomeIcon icon="cloud" className="icon"/>
               <h1 className="temp">{response.temperature}°F</h1>
-              <h2 className="summart">{response.summary}</h2>
+              <h2 className="summary">{response.summary}</h2>
             </div>
-            : <div className="widget">
+            : <div className="weather">
                 <div className="loader">
                   <CircleLoader
                     sizeUnit={'px'}

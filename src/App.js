@@ -39,9 +39,10 @@ class App extends Component {
             backgroundImage: `url(${this.state.currentBackground})`
             }}>
             <Greeting />
+            <Weather />
             <div className="widgetSection">
               {/* TODO show weather if location allowed */}
-              <Weather />
+
 
               {/* <TopSites className="topSiteSection widget"/> */}
               <div className="todaySection widget">
