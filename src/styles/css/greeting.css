@@ -4,22 +4,21 @@
   flex-wrap: wrap;
   width: 90vw;
   margin-top: 15vh;
-  font-family: "Intro Thin";
-  src: url("../Intro Thin Regular.otf");
-  color: white;
 }
 .greetingWidget h1 {
+  color: white;
+  font-family: "Intro Thin";
   font-size: 3.5em;
-  font-weight: 500;
+  font-weight: normal;
   height: 42px;
   margin: 5px;
 }
 .greetingWidget .greetingName {
-  color: red;
+  color: #e6f3ff;
   font-size: 3.5em;
-  font-weight: 900;
+  font-weight: normal;
   font-family: "Intro Light";
-  src: url("../Intro Light Regular.otf");
+  text-shadow: 0 0 5px #0084ff;
 }
 
 /*# sourceMappingURL=greeting.css.map */

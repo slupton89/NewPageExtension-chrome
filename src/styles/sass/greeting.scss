@@ -2,27 +2,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90vw;
 
+  width: 90vw;
   margin-top: 15vh;
 
-  font-family: 'Intro Thin';
-  src: url('../Intro\ Thin\ Regular.otf');
-  color: white;
-
   h1 {
+    color: white;
+    font-family: 'Intro Thin';
     font-size: 3.5em;
-    font-weight: 500;
+    font-weight: normal;
     height: 42px;
     margin: 5px;
   }
 
   .greetingName {
-    color: red;
+    color: rgb(230, 243, 255);
     font-size: 3.5em;
-    font-weight: 900;
+    font-weight: normal;
     font-family: 'Intro Light';
-    src: url('../Intro\ Light\ Regular.otf');
+
+    text-shadow: 0 0 5px rgb(0, 132, 255),
+
   }
 
   .greetingTime {
