@@ -1,11 +1,11 @@
 import { API_URI } from '../../config'
+import { fromByteArray } from 'base64-js'
 
 export const GET_BACKGROUNDS = 'GET_BACKGROUNDS'
 export const GetBackgrounds = (gallery) => ({
   gallery,
   type: GET_BACKGROUNDS
 })
-
 
 export const getBGs = (imgSetId) => (dispatch) => {
   return fetch(`${API_URI}/bg/?id=${imgSetId}`, {
@@ -22,11 +22,11 @@ export const getBGs = (imgSetId) => (dispatch) => {
     return res.json()
   })
   .then((res) => {
-    // TODO add function to create an objects of img URLs
-    // and credits from res response.
-    dispatch(GetBackgrounds(res))
+    const bgs = res.map(index => `https://farm${index.farm}.staticflickr.com/${index.server}/${index.id}_${index.secret}.jpg`)
+    dispatch(GetBackgrounds(bgs))
   })
   .catch(err => {
     console.error('SERVER ERROR: ', err)
   })
 }
+
