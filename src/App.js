@@ -13,16 +13,32 @@ class App extends Component {
     super()
 
     this.state = {
-      backgrounds: localStorage.backgrounds || []
+      backgrounds: localStorage.backgrounds || [],
+      currentBackground: ''
     }
   }
+
+  setBackground() {
+    this.setState((state) => {
+      const bgs = state.backgrounds.split(',')
+      return {currentBackground: bgs[Math.floor(Math.random() * bgs.length)]}
+    })
+  }
+
+  componentDidMount() {
+    console.log(this.setBackground())
+  }
+
   render() {
+    console.log(this.state.currentBackground)
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
       return (
         <div className="App">
-          <section className="hero">
+          <section className="hero" style={{
+            backgroundImage: `url(${this.state.currentBackground})`
+            }}>
             <Greeting />
             <div className="widgetSection">
               {/* TODO show weather if location allowed */}
