@@ -10,8 +10,8 @@ import FirstSetup from './components/FirstSetup';
 
 class App extends Component {
   render() {
-    console.log(localStorage.getItem('firstRun'))
-    if(localStorage.getItem('firstRun') !== 'true') {
+    console.log(localStorage.getItem('username'))
+    if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
       return (
