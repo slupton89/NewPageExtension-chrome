@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './styles/css/app.css';
 
@@ -27,6 +26,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setBackground()
+
   }
 
   render() {
@@ -34,32 +34,14 @@ class App extends Component {
       return <FirstSetup />
     } else {
       return (
-        <div className="App">
+        <div className="App" onClick={() => console.log(this.state)}>
           <section className="hero" style={{
-            backgroundImage: `url(${this.state.currentBackground})`
+            backgroundImage: `linear-gradient(150deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.3)),
+                              url(${this.state.currentBackground})`
             }}>
-            <Greeting />
-            <Weather />
-            <div className="widgetSection">
-              {/* TODO show weather if location allowed */}
-
-
-              {/* <TopSites className="topSiteSection widget"/> */}
-              <div className="todaySection widget">
-                <FontAwesomeIcon icon="calendar-day" className="icon" />
-                <h2>Today</h2>
-              </div>
-              {/* TODO replace with components */}
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
-              <div className="widget"></div>
+            <div className='greeting-container'>
+              <Greeting />
+              <Weather />
             </div>
             <footer className="footer">
               <img src={require('./images/zentab.png')} alt="zentab logo"></img>
