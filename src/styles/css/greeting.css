@@ -12,14 +12,14 @@
   font-weight: normal;
   height: 42px;
   margin: 5px;
-  text-shadow: 0 0 5px white;
+  text-shadow: 0.03em 0.03em black;
 }
 .greetingWidget .greetingName {
   color: #e6f3ff;
   font-size: 4em;
   font-weight: normal;
   font-family: "Intro Thin";
-  text-shadow: 0 0 5px white;
+  text-shadow: 0.03em 0.03em black;
 }
 
 /*# sourceMappingURL=greeting.css.map */
