@@ -9,20 +9,21 @@
   h1 {
     color: white;
     font-family: 'Intro Thin';
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: normal;
     height: 42px;
     margin: 5px;
+
+    text-shadow: 0 0 5px rgb(255, 255, 255),
   }
 
   .greetingName {
     color: rgb(230, 243, 255);
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: normal;
-    font-family: 'Intro Light';
+    font-family: 'Intro Thin';
 
-    text-shadow: 0 0 5px rgb(0, 132, 255),
-
+    text-shadow: 0 0 5px rgb(255, 255, 255),
   }
 
   .greetingTime {

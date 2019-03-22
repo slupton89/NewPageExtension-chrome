@@ -8,17 +8,18 @@
 .greetingWidget h1 {
   color: white;
   font-family: "Intro Thin";
-  font-size: 3.5em;
+  font-size: 4em;
   font-weight: normal;
   height: 42px;
   margin: 5px;
+  text-shadow: 0 0 5px white;
 }
 .greetingWidget .greetingName {
   color: #e6f3ff;
-  font-size: 3.5em;
+  font-size: 4em;
   font-weight: normal;
-  font-family: "Intro Light";
-  text-shadow: 0 0 5px #0084ff;
+  font-family: "Intro Thin";
+  text-shadow: 0 0 5px white;
 }
 
 /*# sourceMappingURL=greeting.css.map */

@@ -26,11 +26,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(this.setBackground())
+    this.setBackground()
   }
 
   render() {
-    console.log(this.state.currentBackground)
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {

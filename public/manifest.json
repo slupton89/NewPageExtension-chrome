@@ -14,12 +14,7 @@
   "browser_action": {
     "default_popup": "index.html"
   },
-  "icons": {
-    "16": "images/icon.png",
-    "32": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
-  },
+  "icons": ["images/icon.png"],
   "chrome_url_overrides" : {
     "newtab": "index.html"
   }
