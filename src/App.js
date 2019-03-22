@@ -9,6 +9,13 @@ import Weather from './components/Weather'
 import FirstSetup from './components/FirstSetup';
 
 class App extends Component {
+  constructor(props) {
+    super()
+
+    this.state = {
+      backgrounds: localStorage.backgrounds || []
+    }
+  }
   render() {
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
