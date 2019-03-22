@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 require('../styles/css/greeting.css')
 
-function Greeting(props) {
+export default function Greeting(props) {
   let getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()
@@ -15,7 +15,7 @@ function Greeting(props) {
   }
 
   let getUserName = () => {
-    const name = props.userName
+    const name = localStorage.getItem('username')
     return name !== undefined ? name : 'No Name Entered'
   }
 
@@ -27,9 +27,3 @@ function Greeting(props) {
     </div>
   )
 }
-
-const mapStateToProps = state => ({
-    userName: state.user.userName
-})
-
-export default connect(mapStateToProps)(Greeting)
