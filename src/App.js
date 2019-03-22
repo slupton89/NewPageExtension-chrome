@@ -10,8 +10,7 @@ import FirstSetup from './components/FirstSetup';
 
 class App extends Component {
   render() {
-    console.log(localStorage.getItem('firstRun'))
-    if(localStorage.getItem('firstRun') !== 'true') {
+    if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
       return (
@@ -23,7 +22,6 @@ class App extends Component {
               <Weather />
 
               {/* <TopSites className="topSiteSection widget"/> */}
-              {/* TODO replace with components */}
               <div className="todaySection widget">
                 <FontAwesomeIcon icon="calendar-day" className="icon" />
                 <h2>Today</h2>
