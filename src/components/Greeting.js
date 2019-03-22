@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 require('../styles/css/greeting.css')
 

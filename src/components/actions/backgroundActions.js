@@ -1,5 +1,4 @@
 import { API_URI } from '../../config'
-import { fromByteArray } from 'base64-js'
 
 export const GET_BACKGROUNDS = 'GET_BACKGROUNDS'
 export const GetBackgrounds = (gallery) => ({
