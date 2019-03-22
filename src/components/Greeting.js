@@ -7,10 +7,10 @@ export default function Greeting(props) {
   let getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()
-    return hour >= 21 ? 'Night'
-      : hour >= 17 ? 'Evening'
-      : hour >= 12 ? 'Afternoon'
-      : hour >= 6 ? 'Morning'
+    return hour >= 21 || hour <= 4 ? 'Night'
+      : hour >= 18 ? 'Evening'
+      : hour >= 1 ? 'Afternoon'
+      : hour >= 5 ? 'Morning'
       : 'ERROR'
   }
 
