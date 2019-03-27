@@ -10373,7 +10373,7 @@ workbox-core@^3.6.3:
 
 workbox-google-analytics@^3.6.3:
   version "3.6.3"
-  resolved "https://registry.yarnpkg.com/workbox-google-analytics/-/workbox-google-analytics-3.6.3.tgz#99df2a3d70d6e91961e18a6752bac12e91fbf727"
+  resolved "https://registry.yarnpkg.com/workbox--analytics/-/workbox--analytics-3.6.3.tgz#99df2a3d70d6e91961e18a6752bac12e91fbf727"
   integrity sha512-RQBUo/6SXtIaQTRFj4RQZ9e1gAl7D8oS5S+Hi173Kk70/BgJjzPwXpC5A249Jv5YfkCOLMQCeF9A27BiD0b0ig==
   dependencies:
     workbox-background-sync "^3.6.3"

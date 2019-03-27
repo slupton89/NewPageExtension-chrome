@@ -19,8 +19,7 @@ export default function Greeting() {
 
   return (
     <div className="greetingWidget">
-      <h1 className="greetingTime">Good {getDayTime()},</h1>
-      <h1 className="greetingName">{getUserName()}</h1>
+      <h1 className="greetingTime">Good {getDayTime()}, {getUserName()}</h1>
     </div>
   )
 }

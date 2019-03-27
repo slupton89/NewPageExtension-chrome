@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
@@ -31,13 +32,14 @@ class App extends Component {
   }
 
   render() {
+    console.log(chrome)
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
       return (
         <div className="App" onClick={() => console.log(this.state)}>
           <section className="hero" style={{
-            backgroundImage: `linear-gradient(140deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 000, 0.2)),
+            backgroundImage: `linear-gradient(140deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 000, 0)),
                               url(${this.state.currentBackground})`
             }}>
             <div className='greeting-container'>
