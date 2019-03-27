@@ -4,7 +4,6 @@
   "description": "A fresh new take on new tabs",
   "version": "0",
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='",
   "permissions": [
     "topSites",
     "identity",
@@ -14,8 +13,13 @@
   "browser_action": {
     "default_popup": "index.html"
   },
-  "icons": ["images/icon.png"],
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
   "chrome_url_overrides" : {
-    "newtab": "index.html"
+  "newtab": "index.html"
   }
 }
