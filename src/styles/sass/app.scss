@@ -3,6 +3,7 @@
   font-family: 'Intro Thin';
   src: url('../Intro\ Thin\ Regular.otf');
   background-color: black;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -19,11 +20,6 @@
   }
 }
 
-.icon {
-  /* Text styles */
-  font-size: 48px;
-}
-
 .hero {
   /* Sizing */
   width: 100vw;
@@ -36,7 +32,6 @@
   align-items: center;
 
   /* Text styles */
-  text-align: center;
   color: white;
 
   /* Background styles */

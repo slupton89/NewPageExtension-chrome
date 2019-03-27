@@ -37,7 +37,7 @@ class App extends Component {
       return (
         <div className="App" onClick={() => console.log(this.state)}>
           <section className="hero" style={{
-            backgroundImage: `linear-gradient(150deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.3)),
+            backgroundImage: `linear-gradient(140deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 000, 0.2)),
                               url(${this.state.currentBackground})`
             }}>
             <div className='greeting-container'>

@@ -2,12 +2,11 @@ import React from 'react'
 
 require('../styles/css/greeting.css')
 
-export default function Greeting(props) {
+export default function Greeting() {
   let getDayTime = () => {
     let date = new Date()
     let hour = date.getHours()
-    return hour >= 21 || hour <= 4 ? 'Night'
-      : hour >= 18 ? 'Evening'
+    return hour >= 18 || hour <= 4 ? 'Evening'
       : hour >= 1 ? 'Afternoon'
       : hour >= 5 ? 'Morning'
       : 'ERROR'
