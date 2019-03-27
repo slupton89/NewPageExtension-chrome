@@ -3,6 +3,9 @@
   font-family: 'Intro Thin';
   src: url('../Intro\ Thin\ Regular.otf');
   background-color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::-webkit-scrollbar {

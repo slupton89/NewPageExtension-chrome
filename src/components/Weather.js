@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import socketIOClient from 'socket.io-client'
-import { CircleLoader } from 'react-spinners'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { PropagateLoader } from 'react-spinners'
 import '../styles/css/weather.css'
 class Weather extends React.Component {
   constructor() {
@@ -25,9 +23,7 @@ class Weather extends React.Component {
   }
 
   formatTemp(temp) {
-    const newTemp = temp.toString().slice(0, 2)
-    console.log(newTemp)
-    return newTemp
+    return temp.toString().slice(0, 2)
   }
 
   render() {
@@ -36,16 +32,15 @@ class Weather extends React.Component {
 
           response
             ? <div className="weather">
-                {/* <FontAwesomeIcon icon="cloud" className="icon"/> */}
                 <h1 className="temp">{this.formatTemp(response.temperature)}°f</h1>
                 <h2 className="summary">{response.summary}</h2>
               </div>
             : <div className="weather">
                 <div className="loader">
-                  <CircleLoader
+                  <PropagateLoader
                     sizeUnit={'px'}
-                    size={50}
-                    color={'#FFFFFF'}
+                    size={25}
+                    color={'rgba(255, 255, 255, 0.25)'}
                   />
                 </div>
               </div>
