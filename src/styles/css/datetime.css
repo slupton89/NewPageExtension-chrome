@@ -1,0 +1,16 @@
+.datetime {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 90vw;
+  margin-left: 15vw;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.datetime .date {
+  font-size: 2.5em;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=datetime.css.map */

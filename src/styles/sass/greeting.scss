@@ -4,18 +4,20 @@
   flex-wrap: wrap;
 
   width: 90vw;
-  margin-top: 15vh;
 
-  h1 {
-    font-size: 4em;
+  margin-top: 15vh;
+  margin-left: 15vw;
+
+  .greetingTime {
+    font-size: 5em;
     font-weight: normal;
-    height: 42px;
-    margin: 5px;
   }
 
   .greetingName {
-    font-size: 4em;
+    font-size: 5em;
     font-weight: normal;
+
+    margin-left: 20px;
   }
 }
 
