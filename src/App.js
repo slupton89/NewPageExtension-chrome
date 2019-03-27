@@ -14,30 +14,25 @@ class App extends Component {
     super()
 
     this.state = {
-      backgrounds: localStorage.backgrounds || [],
+      backgrounds: localStorage.backgrounds.split(',') || [],
       currentBackground: ''
     }
   }
 
-  setBackground() {
+  componentDidMount() {
     this.setState((state) => {
-      const bgs = state.backgrounds.split(',')
+      const bgs =state.backgrounds
       return {currentBackground: bgs[Math.floor(Math.random() * bgs.length)]}
     })
   }
 
-  componentDidMount() {
-    this.setBackground()
-
-  }
-
   render() {
-    console.log(chrome)
+    console.log(this.state.backgrounds)
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
       return (
-        <div className="App" onClick={() => console.log(this.state)}>
+        <div className="App">
           <section className="hero" style={{
             backgroundImage: `linear-gradient(140deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 000, 0)),
                               url(${this.state.currentBackground})`

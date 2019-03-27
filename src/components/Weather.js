@@ -9,7 +9,7 @@ class Weather extends React.Component {
 
     this.state = {
       response: false,
-      endpoint: 'localhost:1337'
+      endpoint: 'http://localhost:1337'
     }
   }
 

@@ -4,6 +4,7 @@
   "description": "A fresh new take on new tabs",
   "version": "0",
   "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'sha256-ZV/h4TAVHOABdXzrBAtnTnYSVqYyIyiGTv9y1x9pu3s='; object-src 'self' https://localhost",
   "permissions": [
     "topSites",
     "identity",
