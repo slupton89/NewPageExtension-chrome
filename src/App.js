@@ -14,7 +14,7 @@ class App extends Component {
     super()
 
     this.state = {
-      backgrounds: localStorage.backgrounds.split(',') || [],
+      backgrounds: localStorage.backgrounds !== undefined ? localStorage.backgrounds.split(',') : [],
       currentBackground: ''
     }
   }
