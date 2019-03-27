@@ -2,19 +2,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100vw;
+  justify-content: flex-start;
+  width: 90vw;
+  margin-left: 15vw;
+  margin-top: 0;
 
-  .time {
-    font-size: 2em;
-    font-weight: normal;
-    height: 42px;
-    margin-left: 5vw;
-  }
+  color: rgba($color: white, $alpha: 0.8);
 
   .date {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: normal;
+    // margin: 10px;
   }
 }
 

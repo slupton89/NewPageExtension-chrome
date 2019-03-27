@@ -24,16 +24,22 @@ class Weather extends React.Component {
     })
   }
 
+  formatTemp(temp) {
+    const newTemp = temp.toString().slice(0, 2)
+    console.log(newTemp)
+    return newTemp
+  }
+
   render() {
     const { response } = this.state
     return (
-      <div style={{ textAlign: "center" }}>
-        {response
-          ? <div className="weather weatherDesc">
-              <FontAwesomeIcon icon="cloud" className="icon"/>
-              <h1 className="temp">{response.temperature}°F</h1>
-              <h2 className="summary">{response.summary}</h2>
-            </div>
+
+          response
+            ? <div className="weather">
+                {/* <FontAwesomeIcon icon="cloud" className="icon"/> */}
+                <h1 className="temp">{this.formatTemp(response.temperature)}°f</h1>
+                <h2 className="summary">{response.summary}</h2>
+              </div>
             : <div className="weather">
                 <div className="loader">
                   <CircleLoader
@@ -42,8 +48,8 @@ class Weather extends React.Component {
                     color={'#FFFFFF'}
                   />
                 </div>
-              </div>}
-      </div>
+              </div>
+
     )
   }
 }

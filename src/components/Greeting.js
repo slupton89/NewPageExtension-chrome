@@ -20,8 +20,7 @@ export default function Greeting(props) {
 
   return (
     <div className="greetingWidget">
-      <h1>Good</h1>
-      <h1 className="greetingTime">{getDayTime()},</h1>
+      <h1 className="greetingTime">Good {getDayTime()},</h1>
       <h1 className="greetingName">{getUserName()}</h1>
     </div>
   )

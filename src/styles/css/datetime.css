@@ -2,17 +2,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100vw;
-}
-.datetime .time {
-  font-size: 2em;
-  font-weight: normal;
-  height: 42px;
-  margin-left: 5vw;
+  justify-content: flex-start;
+  width: 90vw;
+  margin-left: 15vw;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 .datetime .date {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: normal;
 }
 

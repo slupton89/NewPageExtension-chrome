@@ -1,26 +1,23 @@
 .weather {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  width: 32vw;
-}
-.weather.weatherDesc {
-  color: rgba(255, 255, 255, 0.6);
-}
-.weather.weatherDesc .temp {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 25px;
-}
-.weather.weatherDesc .summary {
-  font-size: 2em;
+  justify-content: flex-start;
+  width: 90vw;
+  margin-left: 15vw;
+  margin-top: 0;
   font-family: "Intro Thin";
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
 }
-.weather.weatherDesc .icon {
-  margin-left: 5vw;
+.weather .temp {
+  padding: 0;
+  font-size: 2.5em;
+  font-weight: normal;
+}
+.weather .summary {
+  margin-left: 10px;
+  font-size: 2.5em;
+  font-weight: normal;
 }
 .weather .loader {
   margin-top: 50px;

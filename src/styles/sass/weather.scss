@@ -1,31 +1,29 @@
 .weather {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 32vw;
+    justify-content: flex-start;
 
-    &.weatherDesc {
-        color: rgba($color: white, $alpha: .60);
+    width: 90vw;
+    margin-left: 15vw;
+    margin-top: 0;
+    font-family: 'Intro Thin';
+    color: rgba($color: white, $alpha: .8);
 
-        .temp {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 25px;
-        }
-
-        .summary {
-            font-size: 2em;
-            font-family: 'Intro Thin';
-            font-weight: bold;
-        }
-
-        .icon {
-            margin-left: 5vw;
-        }
-
+    .temp {
+        padding: 0;
+        font-size: 2.5em;
+        font-weight: normal;
     }
+
+    .summary {
+        margin-left: 10px;
+        font-size: 2.5em;
+        font-weight: normal;
+    }
+
+    // .icon {
+    // }
 
     .loader {
         margin-top: 50px;

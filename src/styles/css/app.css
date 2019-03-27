@@ -1,8 +1,6 @@
 .App {
-  margin: 0;
   font-family: "Intro Thin";
   src: url("../Intro Thin Regular.otf");
-  box-sizing: border-box;
   background-color: black;
 }
 
@@ -42,29 +40,12 @@
   background-attachment: fixed;
 }
 
-.widgetSection {
-  top: 10vh;
-  position: relative;
-  width: 95vw;
-  height: 50vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  align-content: flex-start;
-  overflow: scroll;
+h1 {
   margin: 0;
-  z-index: 10;
 }
 
-.widget {
-  /* Positioning and sizing */
-  width: 250px;
-  height: 250px;
-  margin: 5px;
-  /* border: 2px solid black; */
-  background-color: rgba(155, 155, 155, 0.15);
+h2 {
+  margin: 0;
 }
 
 /*# sourceMappingURL=app.css.map */

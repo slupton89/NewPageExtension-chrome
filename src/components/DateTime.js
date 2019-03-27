@@ -30,7 +30,6 @@ export default class DateTime extends React.Component {
   render() {
     return (
       <div className="datetime">
-        <h1 className='time'>{this.state.time}</h1>
         <h2 className='date'>{this.state.day}, {this.state.dayDate} of {this.state.month}</h2>
       </div>
     )
