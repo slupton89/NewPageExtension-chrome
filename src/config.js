@@ -6,7 +6,8 @@ import {
   landscapeGal,
   spaceGal,
   citiesGal,
-  abstractGal
+  abstractGal,
+  WEATHER_ENDPOINT
  } from './env.js'
 
 
@@ -18,3 +19,4 @@ export const landscapeId = landscapeGal || 'Missing Landscape Gallery ID'
 export const spaceId = spaceGal || 'Missing Space Gallery ID'
 export const citiesId = citiesGal || 'Missing Cities Gallery ID'
 export const abstractId = abstractGal || 'Missing Abstract Gallery ID'
+export const WEATHER_URI= WEATHER_ENDPOINT || 'http://localhost:1337'

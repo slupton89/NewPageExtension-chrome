@@ -5,7 +5,7 @@ import('../../styles/css/location.css')
 
 export default function Location(props) {
   const requestPermission = () => {
-    navigator.geolocation.getCurrentPosition(()=> console.log('success'), () => console.log('error'))
+    navigator.geolocation.getCurrentPosition(()=> console.log('Location Enabled'), () => console.log(`Something went wront enabling location. Weather features won't function properly`))
     localStorage.setItem('firstRun', true)
   }
 

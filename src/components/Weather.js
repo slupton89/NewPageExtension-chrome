@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import socketIOClient from 'socket.io-client'
 import { PropagateLoader } from 'react-spinners'
+import { WEATHER_URI } from '../config'
 import '../styles/css/weather.css'
 class Weather extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class Weather extends React.Component {
 
     this.state = {
       response: false,
-      endpoint: 'https://newpage-server.herokuapp.com/'
+      endpoint: WEATHER_URI
     }
   }
 

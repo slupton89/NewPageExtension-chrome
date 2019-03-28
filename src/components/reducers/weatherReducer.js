@@ -33,7 +33,6 @@ const weatherReducer = (state = initialState, action) => {
     })
   } else if(action.type === FETCH_WEATHER_SUCCESS) {
     let time = new Date()
-    console.log('!!!!!')
     return Object.assign({}, state, {
       data: action.data,
       lastReq: time.getTime(),

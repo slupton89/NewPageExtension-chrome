@@ -10,6 +10,5 @@ export const setUserName = () => ({
 })
 
 export const getUser = () => (dispatch) => {
-  console.log("getting user")
   dispatch(GetUserName())
 }
