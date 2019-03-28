@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import socketIOClient from 'socket.io-client'
 import { PropagateLoader } from 'react-spinners'
-import { WEATHER_URI } from '../config'
+import { API_URI } from '../config'
 import '../styles/css/weather.css'
 class Weather extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class Weather extends React.Component {
 
     this.state = {
       response: false,
-      endpoint: WEATHER_URI
+      endpoint: API_URI
     }
   }
 
@@ -19,6 +19,7 @@ class Weather extends React.Component {
     const socket = socketIOClient(endpoint)
     navigator.geolocation.getCurrentPosition(pos => socket.send([pos.coords.latitude, pos.coords.longitude]))
     socket.on("FromAPI", data => {
+      console.log('retrived weather')
       this.setState({ response: data })
     })
   }
@@ -30,7 +31,6 @@ class Weather extends React.Component {
   render() {
     const { response } = this.state
     return (
-
           response
             ? <div className="weather">
                 <h1 className="temp">{this.formatTemp(response.temperature)}°f</h1>
@@ -45,7 +45,6 @@ class Weather extends React.Component {
                   />
                 </div>
               </div>
-
     )
   }
 }
