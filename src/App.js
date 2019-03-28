@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.backgrounds)
     if(localStorage.getItem('firstRun') !== 'true' || localStorage.getItem('username') === null) {
       return <FirstSetup />
     } else {
